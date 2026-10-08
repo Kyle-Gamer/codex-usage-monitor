@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>Codex Usage Monitor</title>
+  <desc>Dark graphite app icon with code brackets and a green progress ring.</desc>
+  <rect x="64" y="64" width="896" height="896" rx="228" fill="#22252D"/>
+  <circle cx="512" cy="512" r="290" fill="none" stroke="#505762" stroke-width="70"/>
+  <circle cx="512" cy="512" r="290" fill="none" stroke="#55D66E" stroke-width="70" stroke-linecap="round" stroke-dasharray="1308 514" transform="rotate(-90 512 512)"/>
+  <path d="M432 384 326 512l106 128M592 384l106 128-106 128" fill="none" stroke="#FFFFFF" stroke-width="58" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

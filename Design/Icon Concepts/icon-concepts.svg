@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1600" viewBox="0 0 1600 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Codex Usage Monitor 图标方向草图</title>
+  <desc id="desc">四个简洁的 macOS 应用图标方向：代码括号与进度环、代码核心与进度条、C 字母仪表盘、终端窗口与进度条。</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="cubeBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6D7BFF"/>
+      <stop offset="1" stop-color="#3B3BB4"/>
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0D8D91"/>
+      <stop offset="1" stop-color="#075E67"/>
+    </linearGradient>
+    <style>
+      .label { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", sans-serif; fill: #1f2937; }
+      .small { font-size: 24px; font-weight: 600; letter-spacing: .02em; }
+      .note { font-size: 20px; fill: #64748b; }
+      .icon { filter: url(#shadow); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" fill="#F6F7F9"/>
+  <text x="96" y="86" class="label" font-size="42" font-weight="700">Codex Usage Monitor · 图标方向草图</text>
+  <text x="96" y="126" class="label note">先比较视觉语言；选定方向后再制作正式 macOS 图标资源与菜单栏模板。</text>
+
+  <!-- Direction A -->
+  <g transform="translate(96 190)">
+    <rect width="664" height="360" rx="34" fill="#FFFFFF"/>
+    <text x="42" y="54" class="label small">A · 代码括号 + 进度环</text>
+    <text x="42" y="88" class="label note">Codex 识别最直接，适合小尺寸显示</text>
+    <g class="icon" transform="translate(245 112)">
+      <rect width="174" height="174" rx="40" fill="#22252D"/>
+      <circle cx="87" cy="87" r="54" fill="none" stroke="#505762" stroke-width="13"/>
+      <path d="M87 33 A54 54 0 1 1 43 118" fill="none" stroke="#55D66E" stroke-width="13" stroke-linecap="round"/>
+      <path d="M60 65 43 87l17 22M114 65l17 22-17 22" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Direction B -->
+  <g transform="translate(840 190)">
+    <rect width="664" height="360" rx="34" fill="#FFFFFF"/>
+    <text x="42" y="54" class="label small">B · 几何代码核心 + 进度条</text>
+    <text x="42" y="88" class="label note">更像产品图标，抽象度与品牌感更高</text>
+    <g class="icon" transform="translate(245 112)">
+      <rect width="174" height="174" rx="40" fill="url(#cubeBlue)"/>
+      <path d="m87 33 42 24v48l-42 24-42-24V57z" fill="#8490FF" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+      <path d="m87 33 42 24-42 24-42-24z" fill="#AAB1FF"/>
+      <path d="M87 81v48" stroke="#4749B8" stroke-width="5"/>
+      <rect x="35" y="143" width="104" height="11" rx="5.5" fill="#2C307F"/>
+      <rect x="35" y="143" width="71" height="11" rx="5.5" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Direction C -->
+  <g transform="translate(96 626)">
+    <rect width="664" height="360" rx="34" fill="#FFFFFF"/>
+    <text x="42" y="54" class="label small">C · C 字母仪表盘 + 光标</text>
+    <text x="42" y="88" class="label note">最简洁、最像独立品牌标记，Codex 依赖字母联想</text>
+    <g class="icon" transform="translate(245 112)">
+      <rect width="174" height="174" rx="40" fill="#F3EDE2"/>
+      <path d="M125 56 A54 54 0 1 0 125 118" fill="none" stroke="#11233F" stroke-width="17" stroke-linecap="round"/>
+      <path d="M126 56 A54 54 0 0 0 86 35" fill="none" stroke="#55D66E" stroke-width="17" stroke-linecap="round"/>
+      <path d="M65 132h42" stroke="#11233F" stroke-width="9" stroke-linecap="round"/>
+      <path d="m112 124 13 8-13 8" fill="none" stroke="#11233F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <!-- Direction D -->
+  <g transform="translate(840 626)">
+    <rect width="664" height="360" rx="34" fill="#FFFFFF"/>
+    <text x="42" y="54" class="label small">D · 终端窗口 + 进度条</text>
+    <text x="42" y="88" class="label note">开发者工具属性最强，轮廓稳、缩小后仍清楚</text>
+    <g class="icon" transform="translate(245 112)">
+      <rect width="174" height="174" rx="40" fill="url(#teal)"/>
+      <rect x="32" y="39" width="110" height="74" rx="13" fill="none" stroke="#FFFFFF" stroke-width="8"/>
+      <path d="m50 61 15 15-15 15M74 91h22" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="32" y="130" width="110" height="12" rx="6" fill="#064A52"/>
+      <rect x="32" y="130" width="79" height="12" rx="6" fill="#FFFFFF"/>
+      <circle cx="52" cy="24" r="4" fill="#9FE6C6"/>
+      <circle cx="70" cy="24" r="4" fill="#9FE6C6"/>
+      <circle cx="88" cy="24" r="4" fill="#9FE6C6"/>
+    </g>
+  </g>
+</svg>
