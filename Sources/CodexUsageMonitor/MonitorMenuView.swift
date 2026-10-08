@@ -238,7 +238,7 @@ struct MonitorMenuView: View {
                 if let peak = usage.summary.peakDailyTokens {
                     metricRow("单日峰值", value: "\(TokenUsageSnapshot.compact(peak)) token")
                 }
-                Text("估价假设所有 Token 均按 gpt-5.3-codex 输入价（$1.75/百万）计算。官方个人资料未提供模型及输入/输出拆分，实际 API 等值金额可能不同；Codex 订阅不按此金额计费。")
+                Text("估价假设所有 Token 均按 gpt-5.3-codex 输入价（$1.75/百万）计算。官方个人资料未提供模型及输入/输出拆分，实际 API 等值金额可能不同；Codex 订阅不按此金额计费。今日与本月数据暂按本机日历日汇总。")
                     .font(.caption2)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
