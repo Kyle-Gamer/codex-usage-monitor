@@ -10,5 +10,17 @@ func runTokenUsageTests() throws {
     check(usage.tokens(on: today, calendar: calendar) == 1_159_000, "today should match its daily bucket")
     check(usage.tokens(in: today, calendar: calendar) == 1_160_000, "month should aggregate current-month buckets")
     check(usage.summary.lifetimeTokens == 2_500_000, "summary fields should decode")
-    check(TokenUsageSnapshot.compact(1_159_000) == "115.9万", "token compact format should use ten-thousands")
+    let formattingCases: [(Int64, String)] = [
+        (0, "0"), (1, "1"), (999, "999"),
+        (1_000, "1.0千"), (1_050, "1.1千"), (1_499, "1.5千"), (1_500, "1.5千"),
+        (1_900, "1.9千"), (2_499, "2.5千"), (5_000, "5.0千"), (9_999, "10.0千"),
+        (10_000, "1.0万"), (10_499, "1.0万"), (10_500, "1.1万"), (15_000, "1.5万"),
+        (15_900, "1.6万"), (99_999, "10.0万"), (100_000, "10.0万"),
+        (999_999, "100.0万"), (1_159_000, "115.9万")
+    ]
+    for (value, expected) in formattingCases {
+        check(TokenUsageSnapshot.compact(value) == expected, "compact formatting for \(value) is \(expected)")
+    }
+    check(abs(TokenUsageSnapshot.estimatedAPICostUSD(for: 15_900) - 0.027825) < 0.0000001,
+          "estimated price should use the original token count, not its rounded display")
 }

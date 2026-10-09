@@ -316,15 +316,17 @@ public struct TokenUsageSnapshot: Codable, Equatable, Sendable {
     public var todayFormatted: String {
         let now = Date()
         guard let amount = tokens(on: now) else { return "Token 暂不可用" }
-        let estimatedCost = Double(amount) * 1.75 / 1_000_000
+        let estimatedCost = Self.estimatedAPICostUSD(for: amount)
         return "\(Self.compact(amount)) token $\(String(format: "%.2f", estimatedCost))"
     }
 
+    /// Reference estimate at the gpt-5.3-codex standard input rate ($1.75 per million tokens).
+    public static func estimatedAPICostUSD(for tokens: Int64) -> Double {
+        Double(tokens) * 1.75 / 1_000_000
+    }
+
     public static func compact(_ tokens: Int64) -> String {
-        if tokens >= 1_000_000 {
-            return String(format: "%.1f万", Double(tokens) / 10_000)
-        }
-        if tokens >= 10_000 { return "\(tokens / 10_000)万" }
+        if tokens >= 10_000 { return String(format: "%.1f万", Double(tokens) / 10_000) }
         if tokens >= 1_000 { return String(format: "%.1f千", Double(tokens) / 1_000) }
         return "\(tokens)"
     }

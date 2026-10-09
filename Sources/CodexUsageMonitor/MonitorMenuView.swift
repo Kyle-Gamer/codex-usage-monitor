@@ -262,7 +262,7 @@ struct MonitorMenuView: View {
     }
 
     private func estimatedCost(for tokens: Int64) -> String {
-        let cost = Double(tokens) * 1.75 / 1_000_000
+        let cost = TokenUsageSnapshot.estimatedAPICostUSD(for: tokens)
         return cost < 0.01 ? String(format: "$%.4f (估算)", cost) : String(format: "$%.2f (估算)", cost)
     }
 
